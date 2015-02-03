@@ -1,0 +1,2084 @@
+{
+    "mappings": {
+      "ed_log": {
+        "_timestamp" : {
+            "enabled" : true,
+            "path" : "timestamp"
+        },
+        "properties": {
+          "timestamp": {
+            "type": "date"
+          },
+          "stats": {
+            "properties": {
+              "wealth": {
+                "properties": {
+                  "maxCredits": {
+                    "type": "long"
+                  }
+                }
+              },
+              "trade": {
+                "properties": {
+                  "totalDistance": {
+                    "type": "long"
+                  },
+                  "qty": {
+                    "type": "long"
+                  },
+                  "profit": {
+                    "type": "long"
+                  },
+                  "largestProfitPerItem": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "largestProfit": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "furthest": {
+                    "properties": {
+                      "origin": {
+                        "type": "long"
+                      },
+                      "distance": {
+                        "type": "long"
+                      },
+                      "destination": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "count": {
+                    "type": "long"
+                  }
+                }
+              },
+              "stolenGoods": {
+                "properties": {
+                  "qty": {
+                    "type": "long"
+                  },
+                  "profit": {
+                    "type": "long"
+                  },
+                  "largestProfitPerItem": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "largestProfit": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "count": {
+                    "type": "long"
+                  }
+                }
+              },
+              "ship": {
+                "properties": {
+                  "spend": {
+                    "properties": {
+                      "ships": {
+                        "type": "long"
+                      },
+                      "repair": {
+                        "type": "long"
+                      },
+                      "modules": {
+                        "type": "long"
+                      },
+                      "fuel": {
+                        "type": "long"
+                      },
+                      "ammo": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "insurance": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "claims": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "fuel_units": {
+                    "properties": {
+                      "scooped": {
+                        "type": "long"
+                      },
+                      "purchased": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "ranks": {
+                "properties": {
+                  "trade": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "service": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "federation": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "explore": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "empire": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "crime": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "combat": {
+                    "properties": {
+                      "ts": {
+                        "type": "long"
+                      },
+                      "gt": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "prealloc": {
+                "type": "boolean"
+              },
+              "missions": {
+                "properties": {
+                  "deliver": {
+                    "properties": {
+                      "missionsFailed": {
+                        "type": "long"
+                      },
+                      "missionsCompleted": {
+                        "type": "long"
+                      },
+                      "missionsAccepted": {
+                        "type": "long"
+                      },
+                      "highestEarnings": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "qty": {
+                            "type": "long"
+                          },
+                          "origin": {
+                            "type": "long"
+                          },
+                          "faction": {
+                            "type": "long"
+                          },
+                          "distance": {
+                            "type": "long"
+                          },
+                          "destination": {
+                            "type": "long"
+                          },
+                          "commodity": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "furthest": {
+                        "properties": {
+                          "origin": {
+                            "type": "long"
+                          },
+                          "distance": {
+                            "type": "long"
+                          },
+                          "destination": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "creditsEarned": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "courier": {
+                    "properties": {
+                      "missionsFailed": {
+                        "type": "long"
+                      },
+                      "missionsCompleted": {
+                        "type": "long"
+                      },
+                      "missionsAccepted": {
+                        "type": "long"
+                      },
+                      "highestEarnings": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "origin": {
+                            "type": "long"
+                          },
+                          "faction": {
+                            "type": "long"
+                          },
+                          "distance": {
+                            "type": "long"
+                          },
+                          "destination": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "furthest": {
+                        "properties": {
+                          "origin": {
+                            "type": "long"
+                          },
+                          "distance": {
+                            "type": "long"
+                          },
+                          "destination": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "creditsEarned": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "collect": {
+                    "properties": {
+                      "missionsFailed": {
+                        "type": "long"
+                      },
+                      "missionsCompleted": {
+                        "type": "long"
+                      },
+                      "missionsAccepted": {
+                        "type": "long"
+                      },
+                      "highestEarnings": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "qty": {
+                            "type": "long"
+                          },
+                          "origin": {
+                            "type": "long"
+                          },
+                          "faction": {
+                            "type": "long"
+                          },
+                          "distance": {
+                            "type": "long"
+                          },
+                          "destination": {
+                            "type": "long"
+                          },
+                          "commodity": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "furthest": {
+                        "properties": {
+                          "origin": {
+                            "type": "long"
+                          },
+                          "distance": {
+                            "type": "long"
+                          },
+                          "destination": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "creditsEarned": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "bountyHunter": {
+                    "properties": {
+                      "missionsFailed": {
+                        "type": "long"
+                      },
+                      "missionsCompleted": {
+                        "type": "long"
+                      },
+                      "missionsAccepted": {
+                        "type": "long"
+                      },
+                      "highestEarnings": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "origin": {
+                            "type": "long"
+                          },
+                          "faction": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "creditsEarned": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "assassin": {
+                    "properties": {
+                      "missionsFailed": {
+                        "type": "long"
+                      },
+                      "missionsCompleted": {
+                        "type": "long"
+                      },
+                      "missionsAccepted": {
+                        "type": "long"
+                      },
+                      "highestEarnings": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "origin": {
+                            "type": "long"
+                          },
+                          "faction": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "creditsEarned": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "mining": {
+                "properties": {
+                  "qty": {
+                    "type": "long"
+                  },
+                  "profit": {
+                    "type": "long"
+                  },
+                  "largestProfitPerItem": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "largestProfit": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "count": {
+                    "type": "long"
+                  },
+                  "converted": {
+                    "properties": {
+                      "qty": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "NPC": {
+                "properties": {
+                  "kills": {
+                    "properties": {
+                      "ranks": {
+                        "properties": {
+                          "r8": {
+                            "type": "long"
+                          },
+                          "r0": {
+                            "type": "long"
+                          },
+                          "r1": {
+                            "type": "long"
+                          },
+                          "r2": {
+                            "type": "long"
+                          },
+                          "r3": {
+                            "type": "long"
+                          },
+                          "r4": {
+                            "type": "long"
+                          },
+                          "r5": {
+                            "type": "long"
+                          },
+                          "r6": {
+                            "type": "long"
+                          },
+                          "r7": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "PVP": {
+                "properties": {
+                  "kills": {
+                    "properties": {
+                      "ranks": {
+                        "properties": {
+                          "r8": {
+                            "type": "long"
+                          },
+                          "r0": {
+                            "type": "long"
+                          },
+                          "r1": {
+                            "type": "long"
+                          },
+                          "r2": {
+                            "type": "long"
+                          },
+                          "r3": {
+                            "type": "long"
+                          },
+                          "r4": {
+                            "type": "long"
+                          },
+                          "r5": {
+                            "type": "long"
+                          },
+                          "r6": {
+                            "type": "long"
+                          },
+                          "r7": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "blackMarket": {
+                "properties": {
+                  "totalDistance": {
+                    "type": "long"
+                  },
+                  "qty": {
+                    "type": "long"
+                  },
+                  "profit": {
+                    "type": "long"
+                  },
+                  "largestProfitPerItem": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "largestProfit": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "marketId": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "furthest": {
+                    "properties": {
+                      "origin": {
+                        "type": "long"
+                      },
+                      "distance": {
+                        "type": "long"
+                      },
+                      "destination": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "count": {
+                    "type": "long"
+                  }
+                }
+              },
+              "combat": {
+                "properties": {
+                  "bounty": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "highestClaimed": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "bond": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      }
+                    }
+                  }
+                }
+              },
+              "crime": {
+                "properties": {
+                  "stolenCargo": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "fine": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "bounty": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "highest": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "systemId": {
+                            "type": "long"
+                          },
+                          "faction": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "explore": {
+                "properties": {
+                  "visited": {
+                    "properties": {
+                      "starsystem": {
+                        "type": "string"
+                      },
+                      "starport": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "bodiesCount": {
+                    "type": "long"
+                  },
+                  "creditsEarned": {
+                    "type": "long"
+                  },
+                  "greatestDistanceFromStart": {
+                    "type": "long"
+                  },
+                  "highestPayout": {
+                    "type": "long"
+                  },
+                  "hyperspaceJumps": {
+                    "type": "long"
+                  },
+                  "lastVisitedStarSystems": {
+                    "type": "string"
+                  },
+                  "scanSoldLevels": {
+                    "properties": {
+                      "lev_3": {
+                        "type": "long"
+                      },
+                      "lev_2": {
+                        "type": "long"
+                      },
+                      "lev_1": {
+                        "type": "long"
+                      },
+                      "lev_0": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "totalHyperspaceDistance": {
+                    "type": "long"
+                  }
+                }
+              },
+              "game_time": {
+                "type": "long"
+              },
+              "lastModulesBought": {
+                "properties": {
+                  "value": {
+                    "type": "long"
+                  },
+                  "module": {
+                    "type": "string"
+                  },
+                  "market": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "ships": {
+            "properties": {
+              "station": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "starsystem": {
+                "properties": {
+                  "systemaddress": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "string"
+                  }
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "1": {
+                "properties": {
+                  "station": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "starsystem": {
+                    "properties": {
+                      "systemaddress": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              },
+              "0": {
+                "properties": {
+                  "station": {
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "starsystem": {
+                    "properties": {
+                      "systemaddress": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "ship": {
+            "properties": {
+              "wear": {
+                "properties": {
+                  "tear": {
+                    "type": "long"
+                  },
+                  "game": {
+                    "type": "long"
+                  },
+                  "fade": {
+                    "type": "long"
+                  },
+                  "dirt": {
+                    "type": "long"
+                  }
+                }
+              },
+              "variant": {
+                "type": "string"
+              },
+              "value": {
+                "properties": {
+                  "unloaned": {
+                    "type": "long"
+                  },
+                  "total": {
+                    "type": "long"
+                  },
+                  "modules": {
+                    "type": "long"
+                  },
+                  "hull": {
+                    "type": "long"
+                  },
+                  "cargo": {
+                    "type": "long"
+                  }
+                }
+              },
+              "reserve": {
+                "properties": {
+                  "lvl": {
+                    "type": "long"
+                  }
+                }
+              },
+              "cargo": {
+                "properties": {
+                  "qty": {
+                    "type": "long"
+                  },
+                  "items": {
+                    "properties": {
+                      "value": {
+                        "type": "long"
+                      },
+                      "qty": {
+                        "type": "long"
+                      },
+                      "origin": {
+                        "type": "long"
+                      },
+                      "commodity": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "capacity": {
+                    "type": "long"
+                  }
+                }
+              },
+              "cockpitBreached": {
+                "type": "boolean"
+              },
+              "free": {
+                "type": "boolean"
+              },
+              "fuel": {
+                "properties": {
+                  "lvl": {
+                    "type": "long"
+                  },
+                  "capacity": {
+                    "type": "long"
+                  }
+                }
+              },
+              "health": {
+                "properties": {
+                  "shield": {
+                    "type": "long"
+                  },
+                  "hull": {
+                    "type": "long"
+                  }
+                }
+              },
+              "modules": {
+                "properties": {
+                  "TinyHardpoint2": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "ammo": {
+                            "properties": {
+                              "hopper": {
+                                "type": "long"
+                              },
+                              "clip": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "free": {
+                            "type": "boolean"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "TinyHardpoint1": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "SmallHardpoint2": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "ammo": {
+                            "properties": {
+                              "hopper": {
+                                "type": "long"
+                              },
+                              "clip": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "free": {
+                            "type": "boolean"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "SmallHardpoint1": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "ammo": {
+                            "properties": {
+                              "hopper": {
+                                "type": "long"
+                              },
+                              "clip": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "free": {
+                            "type": "boolean"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Slot06_Size2": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "PaintJob": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "MediumHardpoint2": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "ammo": {
+                            "properties": {
+                              "hopper": {
+                                "type": "long"
+                              },
+                              "clip": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "free": {
+                            "type": "boolean"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "MediumHardpoint1": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "ammo": {
+                            "properties": {
+                              "hopper": {
+                                "type": "long"
+                              },
+                              "clip": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "free": {
+                            "type": "boolean"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "MainEngines": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "LifeSupport": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "FuelTank": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "FrameShiftDrive": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Armour": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "PowerDistributor": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "PowerPlant": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Radar": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Slot01_Size4": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Slot02_Size4": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Slot03_Size4": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Slot04_Size2": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "Slot05_Size2": {
+                    "properties": {
+                      "module": {
+                        "properties": {
+                          "value": {
+                            "type": "long"
+                          },
+                          "unloaned": {
+                            "type": "long"
+                          },
+                          "priority": {
+                            "type": "long"
+                          },
+                          "on": {
+                            "type": "boolean"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "health": {
+                            "type": "long"
+                          },
+                          "free": {
+                            "type": "boolean"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "oxygenRemaining": {
+                "type": "long"
+              }
+            }
+          },
+          "lastSystem": {
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "faction": {
+                "type": "string"
+              }
+            }
+          },
+          "lastStarport": {
+            "properties": {
+              "ships": {
+                "properties": {
+                  "unavailable_list": {
+                    "properties": {
+                      "unavailableReason": {
+                        "type": "string"
+                      },
+                      "requiredRank": {
+                        "type": "long"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "long"
+                      },
+                      "factionId": {
+                        "type": "string"
+                      },
+                      "basevalue": {
+                        "type": "long"
+                      }
+                    }
+                  },
+                  "shipyard_list": {
+                    "properties": {
+                      "Viper": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Type9": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Type7": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Type6": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "SideWinder": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Adder": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Anaconda": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Asp": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "CobraMkIII": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Eagle": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Hauler": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Orca": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      },
+                      "Python": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "long"
+                          },
+                          "basevalue": {
+                            "type": "long"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "modules": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "long"
+                  },
+                  "cost": {
+                    "type": "long"
+                  }
+                }
+              },
+              "id": {
+                "type": "string"
+              },
+              "faction": {
+                "type": "string"
+              },
+              "commodities": {
+                "properties": {
+                  "volumescale": {
+                    "type": "string"
+                  },
+                  "targetStock": {
+                    "type": "long"
+                  },
+                  "stockBracket": {
+                    "type": "long"
+                  },
+                  "stock": {
+                    "type": "long"
+                  },
+                  "sellPrice": {
+                    "type": "long"
+                  },
+                  "rare_min_stock": {
+                    "type": "string"
+                  },
+                  "rare_max_stock": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "meanPrice": {
+                    "type": "long"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "consumptionQty": {
+                    "type": "long"
+                  },
+                  "consumebuy": {
+                    "type": "string"
+                  },
+                  "categoryname": {
+                    "type": "string"
+                  },
+                  "capacity": {
+                    "type": "long"
+                  },
+                  "buyPrice": {
+                    "type": "long"
+                  },
+                  "basicStock": {
+                    "type": "long"
+                  },
+                  "baseCreationQty": {
+                    "type": "double"
+                  },
+                  "baseConsumptionQty": {
+                    "type": "long"
+                  },
+                  "cost_max": {
+                    "type": "long"
+                  },
+                  "cost_mean": {
+                    "type": "string"
+                  },
+                  "cost_min": {
+                    "type": "long"
+                  },
+                  "creationQty": {
+                    "type": "long"
+                  },
+                  "demand": {
+                    "type": "long"
+                  },
+                  "demandBracket": {
+                    "type": "long"
+                  },
+                  "homebuy": {
+                    "type": "string"
+                  },
+                  "homesell": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "commander": {
+            "properties": {
+              "rank": {
+                "properties": {
+                  "trade": {
+                    "type": "long"
+                  },
+                  "service": {
+                    "type": "long"
+                  },
+                  "federation": {
+                    "type": "long"
+                  },
+                  "explore": {
+                    "type": "long"
+                  },
+                  "empire": {
+                    "type": "long"
+                  },
+                  "crime": {
+                    "type": "long"
+                  },
+                  "combat": {
+                    "type": "long"
+                  }
+                }
+              },
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "long"
+              },
+              "docked": {
+                "type": "boolean"
+              },
+              "debt": {
+                "type": "long"
+              },
+              "currentShipId": {
+                "type": "long"
+              },
+              "credits": {
+                "type": "long"
+              },
+              "alive": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
