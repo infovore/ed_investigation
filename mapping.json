@@ -1922,7 +1922,8 @@
                 }
               },
               "name": {
-                "type": "string"
+                "type": "string",
+                "index": "not_analyzed"
               },
               "modules": {
                 "properties": {
@@ -1967,7 +1968,8 @@
                     "type": "string"
                   },
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "index": "not_analyzed"
                   },
                   "meanPrice": {
                     "type": "long"
