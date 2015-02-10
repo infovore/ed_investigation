@@ -1,0 +1,9 @@
+<h1>{{ station }}</h1>
+
+<h2>Commodities here</h2>
+
+<ul>
+  {{#each commodities}}
+  <li><a href="/stations/{{../station}}/commodities/{{this}}">{{this}}</a></li>
+  {{/each}}
+</ul>

@@ -1,0 +1,53 @@
+<h1>{{ commodity }} at {{ station }}</h1>
+
+<script type="text/javascript">
+  var readyStateCheckInterval = setInterval(function() {
+    if (document.readyState === "complete") {
+        clearInterval(readyStateCheckInterval);
+        doGraph();
+    }
+  }, 10);
+
+  function doGraph() {
+    var data = {{{ json data }}};
+    var graph = new Rickshaw.Graph( {
+      element: document.querySelector("#chart"),
+      renderer: 'line',
+      width: 540,
+      height: 240,
+      series: [ {
+        data: data,
+        color: 'steelblue'
+      } ]
+    } );
+
+    var x_axis = new Rickshaw.Graph.Axis.Time( { graph: graph } );
+
+    var y_axis = new Rickshaw.Graph.Axis.Y( {
+      graph: graph,
+      orientation: 'left',
+      tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+      element: document.getElementById('y_axis'),
+    } );
+
+    graph.render();
+
+    var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+      graph: graph,
+      formatter: function(series, x, y) {
+        var date = '<span class="date">' + new Date(x * 1000).toUTCString() + '</span>';
+        var swatch = '<span class="detail_swatch" style="background-color: ' + series.color + '"></span>';
+        var content = swatch + 'Sell Price' + ": " + parseInt(y) + '<br>' + date;
+        return content;
+      }
+    } );
+  }
+
+</script>
+
+<div id="chart_container">
+  <div id="y_axis"></div>
+  <div id="chart"></div>
+</div>
+
+<p><a href="/stations/{{ station }}">Back to {{station}}</a></p>
