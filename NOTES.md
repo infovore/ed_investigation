@@ -36,8 +36,8 @@ If we want to aggregate a particular field, we can nest an aggregation in our hi
 	        "interval": "hour"
 	      },
 	      "aggs": {
-	        "creds": {
-	          "terms": {
+	        "commodity_stats": {
+	          "stats": {
 	            "field": "commander.credits"
 	          }
 	        }
@@ -71,3 +71,74 @@ Cred stats over time:
 	}
 	
 This query can be found as `creds_over_time_query.json` and it returns the data found in `creds_over_time.json`.
+
+---
+
+Exploring Commodity Stats over time
+-----------------------------------
+
+First, get all unique stations:
+
+	 {
+	   "aggs": {
+	     "docs_per_station" : {
+	       "terms" : {
+	         "field" : "lastStarport.name"
+	       }
+	     }
+	   }
+	 }
+
+If you want to see all documents for a particular station, so you can extract all the commodities there:
+
+	{
+		"query": {
+	        "term": {
+	          "lastStarport.name": req.params.station
+	        }
+	      }
+	}
+
+But really, what we're interested in is data over time.
+
+Now we can make a histogram over time for commodites at Lave:
+
+	 {
+	   "query": {
+	     "term": {"lastStarport.name": "Lave Station"}
+	   },
+	   "aggs": {
+	     "docs_over_time": {
+	       "date_histogram": {
+	         "field": "timestamp",
+	         "interval": "hour"
+	       },
+	       "aggs": {
+	         "commodities": {
+	           "terms": {
+	             "field": "lastStarport.commodities.name"
+	           },
+	           "aggs": {
+	             "price_stats": {
+	               "stats": {
+	                 "field": "lastStarport.commodities.sellPrice"    
+	               }
+	             }
+	           }
+	         }
+	       }
+	     }
+	   }
+	 }
+
+And then if we want to graph one of those, the extraction function in our D3 is:
+
+	 var data = _.map(resp.aggregations.docs_over_time.buckets, function(bucket) {
+	   var x = bucket.key / 1000; // milliseconds innit
+	   var biowaste = _.find(bucket.commodities.buckets, function (buck) {
+	     return buck.key == 'Biowaste';
+	   });
+	
+	   var y = biowaste.price_stats.avg;
+	   return {x:x, y:y};
+	 });
