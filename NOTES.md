@@ -94,51 +94,59 @@ If you want to see all documents for a particular station, so you can extract al
 	{
 		"query": {
 	        "term": {
-	          "lastStarport.name": req.params.station
+	          "lastStarport.name": "Lave Station"
 	        }
 	      }
 	}
 
 But really, what we're interested in is data over time.
 
-Now we can make a histogram over time for commodites at Lave:
+*Update:* I changed how I was doing this.
 
-	 {
-	   "query": {
-	     "term": {"lastStarport.name": "Lave Station"}
-	   },
-	   "aggs": {
-	     "docs_over_time": {
-	       "date_histogram": {
-	         "field": "timestamp",
-	         "interval": "hour"
-	       },
-	       "aggs": {
-	         "commodities": {
-	           "terms": {
-	             "field": "lastStarport.commodities.name"
-	           },
-	           "aggs": {
-	             "price_stats": {
-	               "stats": {
-	                 "field": "lastStarport.commodities.sellPrice"    
-	               }
-	             }
-	           }
-	         }
-	       }
-	     }
-	   }
-	 }
+Basically: ES aggregations work best when there is one document per thing you want to aggregate. So: I wrote some ingest code to explode commodities into a row of commodity data per commodity, with timestamp and station name for good measure. That all gets indexed into the `ed_commodities` index, and I've updated the create/delete scripts to use a specific mapping for commodities to give us `starport` and `commodity` as terms.
+
+That means, that to get stats for a single commodity over time, we can do this:
+	
+	{
+	  "query": {
+	    "bool": {
+	      "must": [
+	        {
+	          "term": {
+	            "starport": "Lave Station"
+	          }
+	        },
+	        {
+	          "term": {
+	            "name": "Biowaste"
+	          }
+	        }
+	      ]
+	    }
+	  },
+	  "aggs": {
+	    "docs_over_time": {
+	      "date_histogram": {
+	        "field": "timestamp",
+	        "interval": "hour"
+	      },
+	      "aggs": {
+	        "commodity_stats": {
+	          "stats": {
+	            "field": "sellPrice"
+	          }
+	        }
+	      }
+	    }
+	  }
+	}
 
 And then if we want to graph one of those, the extraction function in our D3 is:
 
 	 var data = _.map(resp.aggregations.docs_over_time.buckets, function(bucket) {
 	   var x = bucket.key / 1000; // milliseconds innit
-	   var biowaste = _.find(bucket.commodities.buckets, function (buck) {
-	     return buck.key == 'Biowaste';
-	   });
-	
-	   var y = biowaste.price_stats.avg;
+       var y = bucket.commodity_stats.avg;
 	   return {x:x, y:y};
 	 });
+	 
+A simple node webapp to explore commodity prices at stations over time is inside `commodities/`; `npm install; npm start` will spin it up on port 5000.
