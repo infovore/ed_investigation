@@ -90,12 +90,25 @@ app.get('/stations/:station', function(req,res) {
 
 app.get('/stations/:station/commodities/:commodity', function(req,res) {
   esClient.search({
-    index: 'ed_logs',
+    index: 'ed_commodities',
     //size: 5,
     body: {
       // Begin query.
       "query": {
-        "term": {"lastStarport.name": req.params.station}
+        "bool": {
+          "must": [
+            {
+            "term": {
+              "starport": req.params.station
+            }
+          },
+          {
+            "term": {
+              "name": req.params.commodity
+            }
+          }
+          ]
+        }
       },
       "aggs": {
         "docs_over_time": {
@@ -104,16 +117,9 @@ app.get('/stations/:station/commodities/:commodity', function(req,res) {
             "interval": "hour"
           },
           "aggs": {
-            "commodities": {
-              "terms": {
-                "field": "lastStarport.commodities.name"
-              },
-              "aggs": {
-                "price_stats": {
-                  "stats": {
-                    "field": "lastStarport.commodities.sellPrice"    
-                  }
-                }
+            "commodity_stats": {
+              "stats": {
+                "field": "sellPrice"
               }
             }
           }
@@ -122,14 +128,11 @@ app.get('/stations/:station/commodities/:commodity', function(req,res) {
     // End query.
     }
   }).then(function(resp) {
+    console.log("%j", resp);
+
     var data = _.map(resp.aggregations.docs_over_time.buckets, function(bucket) {
       var x = bucket.key / 1000; // milliseconds innit
-
-      var commodity = _.find(bucket.commodities.buckets, function (buck) {
-        return buck.key == unescape(req.params.commodity);
-      });
-
-      var y = commodity.price_stats.avg;
+      var y = bucket.commodity_stats.avg;
       return {x:x, y:y};
     });
 
