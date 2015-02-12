@@ -1,0 +1,96 @@
+{
+  "mappings": {
+    "ed_commodity": {
+      "properties": {
+        "volumescale": {
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "dateOptionalTime",
+          "type": "date"
+        },
+        "targetStock": {
+          "type": "long"
+        },
+        "stockBracket": {
+          "type": "long"
+        },
+        "stock": {
+          "type": "long"
+        },
+        "starport": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "sellPrice": {
+          "type": "long"
+        },
+        "rare_min_stock": {
+          "type": "string"
+        },
+        "rare_max_stock": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "index": "not_analyzed"
+        },
+        "meanPrice": {
+          "type": "long"
+        },
+        "id": {
+          "type": "long",
+          "index": "not_analyzed"
+        },
+        "consumptionQty": {
+          "type": "long"
+        },
+        "consumebuy": {
+          "type": "string"
+        },
+        "categoryname": {
+          "type": "string"
+        },
+        "capacity": {
+          "type": "long"
+        },
+        "buyPrice": {
+          "type": "long"
+        },
+        "basicStock": {
+          "type": "long"
+        },
+        "baseCreationQty": {
+          "type": "double"
+        },
+        "baseConsumptionQty": {
+          "type": "long"
+        },
+        "cost_max": {
+          "type": "long"
+        },
+        "cost_mean": {
+          "type": "string"
+        },
+        "cost_min": {
+          "type": "long"
+        },
+        "creationQty": {
+          "type": "long"
+        },
+        "demand": {
+          "type": "long"
+        },
+        "demandBracket": {
+          "type": "long"
+        },
+        "homebuy": {
+          "type": "string"
+        },
+        "homesell": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
